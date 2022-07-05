@@ -18,7 +18,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", data.file[0]);
 
-    const res = await fetch("http://192.168.0.130:9191", {
+    const res = await fetch("https://backend.agpro.co.in/", {
       method: "POST",
       body: formData,
     }).then((res) => res.json());
