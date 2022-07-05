@@ -18,7 +18,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", data.file[0]);
 
-    const res = await fetch("http://192.168.2.103:9191", {
+    const res = await fetch("http://192.168.0.130:9191", {
       method: "POST",
       body: formData,
     }).then((res) => res.json());
@@ -35,9 +35,9 @@ function App() {
       <br></br>
       <br></br>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="container px-4 mx-auto">
+        <div className="container px-2 mx-auto">
           <div className="flex flex-wrap">
-            <div className="w-full px-4 flex-1">
+            <div className="w-full px-2 flex-1">
               <div className="max-w-sm text-white rounded-lg shadow-md dark:text-gray-800 dark:border-gray-700">
                 <h6 className="text-black-700 text-xl font-bold px-4">Input</h6>
                 {/* <input type="file" ref={hiddenFileInput} accept="image/*" style={{ display: 'none' }} onChange={handleChange} />
@@ -75,16 +75,20 @@ function App() {
                   <p className="text-black-700 text-xl font-bold px-4">
                     {response}
                   </p>
-                  {responseImg.map((item, index) => {
-                    return (
-                      <img
-                        className="p-8 rounded-t-lg"
-                        src={item}
-                        alt="product image"
-                        key={index}
-                      />
-                    );
-                  })}
+                  <div className="grid grid-rows-2 
+                     grid-flow-col gap-4 auto-cols-auto">
+                    {responseImg.map((item, index) => {
+                      return (
+                        <img
+                          className="p-8 rounded-t-lg"
+                          src={item}
+                          height="300"
+                          width="300"
+                          alt="product image"
+                          key={index}
+                        />
+                      );
+                    })}</div>
                 </div>
               </div>
             </div>
