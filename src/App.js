@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
                   id="inputImage"
                   className="p-8 rounded-t-lg"
                   src={uploadFile}
-                  alt="product image"
+                  alt="product"
                 />
                 <input
                   type="file"
@@ -84,7 +84,7 @@ function App() {
                           src={item}
                           height="300"
                           width="300"
-                          alt="product image"
+                          alt="product"
                           key={index}
                         />
                       );
