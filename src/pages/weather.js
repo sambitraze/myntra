@@ -7,9 +7,9 @@ function Weather() {
     fetch("http://api.weatherapi.com/v1/current.json?key=d0b793ed611b46c884c41545221107&q=bhubaneswar&aqi=yes", {
       method: "GET",
     }).then((res) => res.json()).then((res) => {
-      console.log(res);
+      console.log(res.current);
       setWeatherData(res)
-      setLoader(false)
+      setLoader(false);
     });
   }, []);
   return (
@@ -39,7 +39,8 @@ function Weather() {
               <p>Wind kph: {weatherData.current.wind_kph} </p>
               <p>wind Dir: {weatherData.current.wind_dir} </p>
               <p>Humidity: {weatherData.current.humidity} </p>
-              <p>Temperature: {weatherData.current.temp_c} </p>
+              <p>Rain in mm: {weatherData.current.precip_in} </p>
+
             </div>
           </div>
         </div>

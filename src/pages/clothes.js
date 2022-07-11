@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 function Clothes() {
-
+    const [loader, setLoader] = useState(true);
     const { register, handleSubmit } = useForm();
     const [response, setResponse] = useState("No Response Yet");
     const [responseImg, setResponseImg] = useState([]);
@@ -14,7 +14,11 @@ function Clothes() {
             setUpload(s);
         }
     };
-    const onSubmit = async (data) => {
+    useEffect(() => {
+        console.log(loader)
+    }, [loader])
+    const onSubmit = async (data) => {        
+        setLoader(true);
         const formData = new FormData();
         formData.append("file", data.file[0]);
 
@@ -24,6 +28,7 @@ function Clothes() {
         }).then((res) => res.json());
         setResponse(res.label);
         setResponseImg(res.suggestion);
+        setLoader(false);
     };
     return (
         <React.Fragment><nav className="bg-gray-800">
@@ -65,13 +70,13 @@ function Clothes() {
                             </div>
                         </div>
                         <div className="w-full px-4 flex-1 grid content-center">
-                            <button
+                            {loader ? "Loading" : <button
                                 className="text-black active:text-black-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                                 type="submit"
                                 onClick={handleSubmit}
                             >
                                 Predict
-                            </button>
+                            </button>}
                         </div>
                         <div className="w-full px-4 flex-1 grid content-center">
                             <div className="w-full px-4 flex-1">
