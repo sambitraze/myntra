@@ -33,8 +33,8 @@ function Clothes() {
                         <div class="hidden sm:block sm:ml-6">
                             <div class="flex space-x-4">
                                 <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Clothes</a>
-                                <a href="/weather" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hair</a>
-                                <a href="/hair" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Weather</a>
+                                <a href="/hair" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hair</a>
+                                <a href="/weather" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Weather</a>
                             </div>
                         </div>
                     </div>
