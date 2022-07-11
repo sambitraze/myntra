@@ -40,8 +40,14 @@ function Weather() {
               <p>wind Dir: {weatherData.current.wind_dir} </p>
               <p>Humidity: {weatherData.current.humidity} </p>
               <p>Rain in mm: {weatherData.current.precip_in} </p>
-
             </div>
+            {
+              weatherData.current.precip_in > 0.5 ? <div className="max-w-sm text-white rounded-lg shadow-md dark:text-gray-800 dark:border-gray-700">
+                Its Raining outside
+                <img src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/110121865_1724811241003534_2047178005258992955_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=U0Yx6kMjcTQAX8Bb4xN&_nc_ht=scontent.fdel29-1.fna&oh=00_AT_clelG2DunT93mNvR9T1NP3EFkDZnHVzEksmly5XOKkw&oe=62F23C60"></img>
+              </div> : <></>
+            }
+
           </div>
         </div>
       </div>

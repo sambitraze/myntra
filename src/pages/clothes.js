@@ -70,13 +70,13 @@ function Clothes() {
                             </div>
                         </div>
                         <div className="w-full px-4 flex-1 grid content-center">
-                            {loader ? "Loading" : <button
+                             <button
                                 className="text-black active:text-black-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                                 type="submit"
                                 onClick={handleSubmit}
                             >
                                 Predict
-                            </button>}
+                            </button>
                         </div>
                         <div className="w-full px-4 flex-1 grid content-center">
                             <div className="w-full px-4 flex-1">
