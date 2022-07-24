@@ -13,7 +13,7 @@ function Weather() {
     });
   }, []);
   return (
-    <div>{loader ? <p>Loading Data</p> : <>
+    <div>{loader ? <p  className="text-red-700">Loading Data</p> : <>
       <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between h-16">
@@ -33,16 +33,16 @@ function Weather() {
         <div className="flex flex-wrap">
           <div className="w-full px-2 flex-1">
             <div className="max-w-sm text-white rounded-lg shadow-md dark:text-gray-800 dark:border-gray-700">
-              <h6 className="text-black-700 text-xl font-bold px-4">Weather Report</h6>
-              <p>Temperature: {weatherData.current.temp_c} C</p>
-              <p>Day/Night: {weatherData.current.is_day ? "Day" : "Night"}</p>
-              <p>Wind kph: {weatherData.current.wind_kph} </p>
-              <p>wind Dir: {weatherData.current.wind_dir} </p>
-              <p>Humidity: {weatherData.current.humidity} </p>
-              <p>Rain in mm: {weatherData.current.precip_in} </p>
+              <h6 className="text-red-700 text-xl font-bold px-4">Weather Report</h6>
+              <p  className="text-red-700">Temperature: {weatherData.current.temp_c} C</p>
+              <p  className="text-red-700">Day/Night: {weatherData.current.is_day ? "Day" : "Night"}</p>
+              <p  className="text-red-700">Wind kph: {weatherData.current.wind_kph} </p>
+              <p  className="text-red-700">wind Dir: {weatherData.current.wind_dir} </p>
+              <p  className="text-red-700">Humidity: {weatherData.current.humidity} </p>
+              <p  className="text-red-700">Rain in mm: {weatherData.current.precip_in} </p>
             </div>
             {
-              weatherData.current.precip_in > 0.5 ? <div className="max-w-sm text-white rounded-lg shadow-md dark:text-gray-800 dark:border-gray-700">
+              weatherData.current.precip_in > 0.01 ? <div className="max-w-sm text-white rounded-lg shadow-md dark:text-gray-800 dark:border-gray-700">
                 Its Raining outside
                 <img src="https://scontent.fdel29-1.fna.fbcdn.net/v/t1.6435-9/110121865_1724811241003534_2047178005258992955_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=U0Yx6kMjcTQAX8Bb4xN&_nc_ht=scontent.fdel29-1.fna&oh=00_AT_clelG2DunT93mNvR9T1NP3EFkDZnHVzEksmly5XOKkw&oe=62F23C60"></img>
               </div> : <></>
